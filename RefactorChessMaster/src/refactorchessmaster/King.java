@@ -56,16 +56,7 @@ public class King
         allMoves.addAll( eastMoves );
         return allMoves;
     }
-    /**
-     * Determines if this King is checked.
-     *
-     * @param board
-     *            the board to check on
-     * @return true if checked, false if not checked
-     */
-    public boolean isChecked( ChessGameBoard board ){
-        return getCurrentAttackers( board ).size() > 0;
-    }
+
     /**
      * Creates an icon for this piece depending on the piece's color.
      *
