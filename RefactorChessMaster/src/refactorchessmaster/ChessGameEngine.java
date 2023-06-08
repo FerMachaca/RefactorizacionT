@@ -82,20 +82,10 @@ public class ChessGameEngine{
      *            the player to check
      * @return boolean true if the player does have legal moves, false otherwise
      */
-    public boolean playerHasLegalMoves( int playerNum ){
-        ArrayList<ChessGamePiece> pieces;
-        if ( playerNum == 1 ){
-            pieces = board.getAllWhitePieces();
-        }
-        else if ( playerNum == 2 ){
-            pieces = board.getAllBlackPieces();
-        }
-        else
-        {
-            return false;
-        }
-        for ( ChessGamePiece currPiece : pieces ){
-            if ( currPiece.hasLegalMoves( board ) ){
+    public boolean playerHasLegalMoves(int playerNum) {
+        ArrayList<ChessGamePiece> pieces = playerNum == 1 ? board.getAllWhitePieces() : board.getAllBlackPieces();
+        for (ChessGamePiece currPiece : pieces) {
+            if (currPiece.hasLegalMoves(board)) {
                 return true;
             }
         }
